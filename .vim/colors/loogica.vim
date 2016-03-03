@@ -42,4 +42,4 @@ if exists("syntax_on")
   hi Ignore guifg=#E6E6E1
   hi String guifg=#A80000 guibg=#E6E6E1
   hi Function guifg=#CC0000
-  hi CursorLine gui=NONE guifg=NONE guibg=#EEEEEE
+  hi CursorLine gui=NONE guifg=NONE guibg=#5fffff

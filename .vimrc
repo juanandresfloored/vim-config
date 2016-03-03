@@ -6,6 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-easymotion'
@@ -23,7 +24,7 @@ map <D-S-]> gt
 map <D-S-[> gT
 map <F9> :lnext<CR>
 map <F7> :lprevious<CR>
-map <F6> :1,$s/\t/  /g<CR>  
+map <F6> :1,$s/\t/  /g<CR>
 
 syntax enable
 set laststatus=2
@@ -49,10 +50,16 @@ set shiftwidth=2
 set tabstop=2
 set expandtab
 
+set ignorecase
 set smartcase
+set incsearch
 set cursorline
 
 let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
 
+autocmd BufWritePre * :%s/\s\+$//e
+
 colorscheme loogica
+execute pathogen#infect()
+call pathogen#helptags()
